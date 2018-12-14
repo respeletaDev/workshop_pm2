@@ -1,0 +1,18 @@
+apps:
+    - script   : api/index.js
+      name     : 'api'
+      log_date_format: "YYYY/MM/DD HH:mm:ss"
+      max_memory_restart: 250M
+      instances: 1
+      exec_mode: cluster
+    - script   : worker/app
+      name     : 'worker'
+      max_memory_restart: 150M
+      log_date_format: "YYYY/MM/DD HH:mm:ss"
+      instances: 2
+      exec_mode: cluster
+ 
+
+ #Start and save the pm2 processes
+ #pm2 start pm2.process.yml    
+ #pm2 save    
