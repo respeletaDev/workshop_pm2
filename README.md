@@ -111,18 +111,6 @@ To monitor logs, custom metrics, application information:
 $ pm2 monit
 ```
 
-### Cluster Mode: Node.js Load Balancing & Zero Downtime Reload
-
-The Cluster mode is a special mode when starting a Node.js application, it starts multiple processes and load-balance HTTP/TCP/UDP queries between them. This increase overall performance (by a factor of x10 on 16 cores machines) and reliability (faster socket re-balancing in case of unhandled errors).
-
-Starting a Node.js application in cluster mode that will leverage all CPUs available:
-
-```bash
-$ pm2 start api.js -i <processes>
-```
-
-`<processes>` can be `'max'`, `-1` (all cpu minus 1) or a specified number of instances to start.
-
 **Zero Downtime Reload**
 
 Hot Reload allows to update an application without any downtime:
